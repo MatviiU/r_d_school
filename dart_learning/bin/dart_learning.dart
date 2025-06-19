@@ -105,13 +105,9 @@ void ternaryOperator() {
   bool isCold = temperature < 10;
 
   String message1 = isHot ? "Тепло" : "Прохолодно";
-  String message2 = isCold ? "Дуже холодно" : "";
+  String message2 = isCold ? "Дуже холодно" : message1;
 
-  if (message2.isNotEmpty) {
-    print("The weather is: $message2");
-  } else {
-    print("The weather is: $message1");
-  }
+  print("The weather is: $message2");
 }
 
 void assignmentOperators() {
