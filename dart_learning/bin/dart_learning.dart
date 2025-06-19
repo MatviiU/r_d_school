@@ -35,10 +35,15 @@ void main() {
   // print(separator);
   // switchStatement();
   // print(separator);
+  // print(separator);
+  // print("Task 8");
+  // print(separator);
+  // loopFor();
+  // print(separator);
   print(separator);
-  print("Task 8");
+  print("Task 9");
   print(separator);
-  loopFor();
+  loopWhile();
   print(separator);
 }
 
@@ -151,21 +156,31 @@ void main() {
 //       print("Невірний номер дня");
 //   }
 // }
-void loopFor(){
-  int sum = 0;
-  for (int i = 1; i <= 10; i++) {
-    print("Number $i");
-  }
-
-  for (int i = 1; i <= 10; i++) {
-    if (i % 2 == 0) {
-      print("Even number: $i");
+// void loopFor(){
+//   int sum = 0;
+//   for (int i = 1; i <= 10; i++) {
+//     print("Number $i");
+//   }
+//
+//   for (int i = 1; i <= 10; i++) {
+//     if (i % 2 == 0) {
+//       print("Even number: $i");
+//     }
+//   }
+//
+//   for (int i = 1; i <= 10; i++) {
+//     sum += i;
+//   }
+//   print("Sum of numbers from 1 to 10: $sum");
+// }
+void loopWhile(){
+  int i = 10;
+  while (i >= 0) {
+    if(i % 2 == 0){
+      print("Парне число: $i");
+    } else{
+      print("Непарне число: $i");
     }
+    i--;
   }
-
-  for (int i = 1; i <= 10; i++) {
-    sum += i;
-  }
-  print("Sum of numbers from 1 to 10: $sum");
-
 }
