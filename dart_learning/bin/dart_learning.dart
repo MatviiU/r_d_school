@@ -1,5 +1,3 @@
-import 'dart:io';
-
 void main(){
   String separator = List.filled(40, '=').join();
 
