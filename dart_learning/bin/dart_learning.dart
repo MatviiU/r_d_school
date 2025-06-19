@@ -1,4 +1,6 @@
-void main(){
+import 'dart:io';
+
+void main() {
   String separator = List.filled(40, '=').join();
 
   // print(separator);
@@ -20,10 +22,16 @@ void main(){
   // print("Task 4");
   // print(separator);
   // ternaryOperator();
+  // print(separator);
+  // print("Task 5");
+  // print(separator);
+  // assignmentOperators();
+  // print(separator);
+
   print(separator);
-  print("Task 5");
+  print("Task 6");
   print(separator);
-  assignmentOperators();
+  conditionals();
   print(separator);
 }
 
@@ -81,17 +89,36 @@ void main(){
 //   }
 // }
 
-void  assignmentOperators(){
-  double score = 0;
-  int correctAnswers = 17;
-  int mistakes = 3;
-  int totalQuestions = 20;
-  int pointsPerQuestion = 10;
-  int pointsPerMistake = 5;
-  score += correctAnswers * pointsPerQuestion;
-  score -= mistakes * pointsPerMistake;
-  score *= 2;
-  score /= totalQuestions;
+// void  assignmentOperators(){
+//   double score = 0;
+//   int correctAnswers = 17;
+//   int mistakes = 3;
+//   int totalQuestions = 20;
+//   int pointsPerQuestion = 10;
+//   int pointsPerMistake = 5;
+//   score += correctAnswers * pointsPerQuestion;
+//   score -= mistakes * pointsPerMistake;
+//   score *= 2;
+//   score /= totalQuestions;
+//
+//   print("Your score is: $score");
+// }
 
-  print("Your score is: $score");
+void conditionals() {
+  late double examScore;
+  stdout.write("Enter your exam score: ");
+  String? inputScore = stdin.readLineSync();
+  examScore = double.parse(inputScore!);
+
+  if (examScore > 90) {
+    print("Відмінно");
+  } else if (examScore >= 75 && examScore <= 90) {
+    print("Добре");
+  } else if (examScore >= 60 && examScore < 75) {
+    print("Задовільно");
+  } else if (examScore < 20) {
+    print("Повторити курс");
+  } else {
+    print("Незадовільно");
+  }
 }
