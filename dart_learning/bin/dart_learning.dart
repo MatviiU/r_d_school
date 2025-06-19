@@ -1,5 +1,3 @@
-import 'dart:io';
-
 void main() {
   String separator = List.filled(40, '=').join();
 
@@ -32,10 +30,15 @@ void main() {
   // print(separator);
   // conditionals();
   // print(separator);
+  // print(separator);
+  // print("Task 7");
+  // print(separator);
+  // switchStatement();
+  // print(separator);
   print(separator);
-  print("Task 7");
+  print("Task 8");
   print(separator);
-  switchStatement();
+  loopFor();
   print(separator);
 }
 
@@ -125,27 +128,44 @@ void main() {
 //     print("Незадовільно");
 //   }
 // }
-
-void switchStatement() {
-  late int dayNumber;
-  stdout.write("Enter a day number: ");
-  String? inputDayNumber = stdin.readLineSync();
-  dayNumber = int.parse(inputDayNumber!);
-  switch (dayNumber) {
-    case 1:
-      print("Понеділок");
-    case 2:
-      print("Вівторок");
-    case 3:
-      print("Середа");
-    case 4:
-      print("Четвер");
-    case 5:
-      print("П'ятниця");
-    case 6:
-    case 7:
-      print("Вихідний день!!");
-    default:
-      print("Невірний номер дня");
+// void switchStatement() {
+//   late int dayNumber;
+//   stdout.write("Enter a day number: ");
+//   String? inputDayNumber = stdin.readLineSync();
+//   dayNumber = int.parse(inputDayNumber!);
+//   switch (dayNumber) {
+//     case 1:
+//       print("Понеділок");
+//     case 2:
+//       print("Вівторок");
+//     case 3:
+//       print("Середа");
+//     case 4:
+//       print("Четвер");
+//     case 5:
+//       print("П'ятниця");
+//     case 6:
+//     case 7:
+//       print("Вихідний день!!");
+//     default:
+//       print("Невірний номер дня");
+//   }
+// }
+void loopFor(){
+  int sum = 0;
+  for (int i = 1; i <= 10; i++) {
+    print("Number $i");
   }
+
+  for (int i = 1; i <= 10; i++) {
+    if (i % 2 == 0) {
+      print("Even number: $i");
+    }
+  }
+
+  for (int i = 1; i <= 10; i++) {
+    sum += i;
+  }
+  print("Sum of numbers from 1 to 10: $sum");
+
 }
