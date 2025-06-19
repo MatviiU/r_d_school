@@ -40,10 +40,15 @@ void main() {
   // print(separator);
   // loopFor();
   // print(separator);
+  // print(separator);
+  // print("Task 9");
+  // print(separator);
+  // loopWhile();
+  // print(separator);
   print(separator);
-  print("Task 9");
+  print("Task 10");
   print(separator);
-  loopWhile();
+  breakAndContinue();
   print(separator);
 }
 
@@ -173,14 +178,25 @@ void main() {
 //   }
 //   print("Sum of numbers from 1 to 10: $sum");
 // }
-void loopWhile(){
-  int i = 10;
-  while (i >= 0) {
-    if(i % 2 == 0){
-      print("Парне число: $i");
-    } else{
-      print("Непарне число: $i");
+// void loopWhile(){
+//   int i = 10;
+//   while (i >= 0) {
+//     if(i % 2 == 0){
+//       print("Парне число: $i");
+//     } else{
+//       print("Непарне число: $i");
+//     }
+//     i--;
+//   }
+// }
+void breakAndContinue(){
+  for (int i = 1; i <= 20; i++){
+    if(i % 3 == 0){
+      continue;
     }
-    i--;
+    else if(i > 15){
+      break;
+    }
+    print("Number: $i");
   }
 }
