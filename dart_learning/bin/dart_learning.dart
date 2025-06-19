@@ -18,10 +18,14 @@ void main(){
   // print(separator);
   // logicalOperations();
 
+  // print(separator);
+  // print("Task 4");
+  // print(separator);
+  // ternaryOperator();
   print(separator);
-  print("Task 4");
+  print("Task 5");
   print(separator);
-  ternaryOperator();
+  assignmentOperators();
   print(separator);
 }
 
@@ -61,20 +65,35 @@ void main(){
 //   print('Must wait: $mustWait');
 // }
 
-void  ternaryOperator(){
-  late double temperature;
-  stdout.write("Enter a temperature: ");
-  String? inputTemperature = stdin.readLineSync();
-  temperature = double.parse(inputTemperature!);
-  bool isHot = temperature > 25;
-  bool isCold = temperature < 10;
+// void  ternaryOperator(){
+//   late double temperature;
+//   stdout.write("Enter a temperature: ");
+//   String? inputTemperature = stdin.readLineSync();
+//   temperature = double.parse(inputTemperature!);
+//   bool isHot = temperature > 25;
+//   bool isCold = temperature < 10;
+//
+//   String message1 = isHot ? "Тепло" : "Прохолодно";
+//   String message2 = isCold ? "Дуже холодно" : "";
+//
+//   if(message2.isNotEmpty){
+//     print("The weather is: $message2");
+//   } else {
+//     print("The weather is: $message1");
+//   }
+// }
 
-  String message1 = isHot ? "Тепло" : "Прохолодно";
-  String message2 = isCold ? "Дуже холодно" : "";
+void  assignmentOperators(){
+  double score = 0;
+  int correctAnswers = 17;
+  int mistakes = 3;
+  int totalQuestions = 20;
+  int pointsPerQuestion = 10;
+  int pointsPerMistake = 5;
+  score += correctAnswers * pointsPerQuestion;
+  score -= mistakes * pointsPerMistake;
+  score *= 2;
+  score /= totalQuestions;
 
-  if(message2.isNotEmpty){
-    print("The weather is: $message2");
-  } else {
-    print("The weather is: $message1");
-  }
+  print("Your score is: $score");
 }
