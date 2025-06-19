@@ -27,11 +27,15 @@ void main() {
   // print(separator);
   // assignmentOperators();
   // print(separator);
-
+  // print(separator);
+  // print("Task 6");
+  // print(separator);
+  // conditionals();
+  // print(separator);
   print(separator);
-  print("Task 6");
+  print("Task 7");
   print(separator);
-  conditionals();
+  switchStatement();
   print(separator);
 }
 
@@ -103,22 +107,45 @@ void main() {
 //
 //   print("Your score is: $score");
 // }
+// void conditionals() {
+//   late double examScore;
+//   stdout.write("Enter your exam score: ");
+//   String? inputScore = stdin.readLineSync();
+//   examScore = double.parse(inputScore!);
+//
+//   if (examScore > 90) {
+//     print("Відмінно");
+//   } else if (examScore >= 75 && examScore <= 90) {
+//     print("Добре");
+//   } else if (examScore >= 60 && examScore < 75) {
+//     print("Задовільно");
+//   } else if (examScore < 20) {
+//     print("Повторити курс");
+//   } else {
+//     print("Незадовільно");
+//   }
+// }
 
-void conditionals() {
-  late double examScore;
-  stdout.write("Enter your exam score: ");
-  String? inputScore = stdin.readLineSync();
-  examScore = double.parse(inputScore!);
-
-  if (examScore > 90) {
-    print("Відмінно");
-  } else if (examScore >= 75 && examScore <= 90) {
-    print("Добре");
-  } else if (examScore >= 60 && examScore < 75) {
-    print("Задовільно");
-  } else if (examScore < 20) {
-    print("Повторити курс");
-  } else {
-    print("Незадовільно");
+void switchStatement() {
+  late int dayNumber;
+  stdout.write("Enter a day number: ");
+  String? inputDayNumber = stdin.readLineSync();
+  dayNumber = int.parse(inputDayNumber!);
+  switch (dayNumber) {
+    case 1:
+      print("Понеділок");
+    case 2:
+      print("Вівторок");
+    case 3:
+      print("Середа");
+    case 4:
+      print("Четвер");
+    case 5:
+      print("П'ятниця");
+    case 6:
+    case 7:
+      print("Вихідний день!!");
+    default:
+      print("Невірний номер дня");
   }
 }
