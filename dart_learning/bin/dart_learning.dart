@@ -10,6 +10,9 @@ void main(){
   print("Task 2");
   comparisonOperations();
   print(separator);
+  print("Task 3");
+  logicalOperations();
+  print(separator);
 }
 
 void mathOperations(){
@@ -36,4 +39,14 @@ void comparisonOperations(){
   print('Is the number greater than 50? $isGreaterThan50');
   print('Is the number less than 100? $isLessThan100');
   print('Is the number divisible by 5? $isDivisibleBy5');
+}
+
+void logicalOperations(){
+  bool hasMoney = true;
+  bool isStoreOpen = true;
+
+  bool canBuy = hasMoney && isStoreOpen;
+  bool mustWait = !hasMoney || !isStoreOpen;
+  print('Can buy: $canBuy');
+  print('Must wait: $mustWait');
 }
