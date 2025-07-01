@@ -1,9 +1,10 @@
 import 'dart:math';
+import 'names.dart';
 
 void main() {
   String separator = List.filled(40, '=').join();
 
-  final List<Function> tasks = [listTak];
+  final List<Function> tasks = [listTak, setTask];
 
   for (final task in tasks) {
     print(separator);
@@ -27,9 +28,9 @@ void listTak() {
   print('Список після видалення елементів: $numbers');
 
   int sum = 0;
-  for (int number in numbers){
-    if (number % 3 == 0){
-      sum += number;
+  for (int i = 0; i < numbers.length; i++){
+    if (numbers[i] % 3 == 0){
+      sum += i;
     }
   }
   print('Сума чисел кратних 3: $sum');
@@ -41,4 +42,18 @@ void listTak() {
     }
   }
   print('Довжина нового списку: ${temp.length}');
+}
+
+void setTask(){
+  Set<String> uniqueNames1 = ukrainianNames1.toSet();
+  Set<String> uniqueNames2 = ukrainianNames2.toSet();
+  Set<String> commonNames = uniqueNames1.intersection(uniqueNames2);
+  print('Унікальні імена: $commonNames');
+  print('Кількість унікальних імен: ${commonNames.length}');
+
+  Set<String> namesOnlyInUniqueNames1 = uniqueNames1.difference(uniqueNames2);
+  print('Імена що є тільки в uniqueNames1: $namesOnlyInUniqueNames1');
+
+  Set<String> namesOnlyInUniqueNames2 = uniqueNames2.difference(uniqueNames1);
+  print('Імена що є тільки в uniqueNames2: $namesOnlyInUniqueNames2');
 }
