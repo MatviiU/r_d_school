@@ -1,10 +1,11 @@
 import 'dart:math';
 import 'names.dart';
+import 'package:word_generator/word_generator.dart';
 
 void main() {
   String separator = List.filled(40, '=').join();
 
-  final List<Function> tasks = [listTak, setTask];
+  final List<Function> tasks = [listTak, setTask, mapTask];
 
   for (final task in tasks) {
     print(separator);
@@ -28,23 +29,23 @@ void listTak() {
   print('Список після видалення елементів: $numbers');
 
   int sum = 0;
-  for (int i = 0; i < numbers.length; i++){
-    if (numbers[i] % 3 == 0){
+  for (int i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 3 == 0) {
       sum += i;
     }
   }
   print('Сума чисел кратних 3: $sum');
 
   List<int> temp = [];
-  for (int number in numbers){
-    if (number % 2 == 0){
+  for (int number in numbers) {
+    if (number % 2 == 0) {
       temp.add(number);
     }
   }
   print('Довжина нового списку: ${temp.length}');
 }
 
-void setTask(){
+void setTask() {
   Set<String> uniqueNames1 = ukrainianNames1.toSet();
   Set<String> uniqueNames2 = ukrainianNames2.toSet();
   Set<String> commonNames = uniqueNames1.intersection(uniqueNames2);
@@ -56,4 +57,15 @@ void setTask(){
 
   Set<String> namesOnlyInUniqueNames2 = uniqueNames2.difference(uniqueNames1);
   print('Імена що є тільки в uniqueNames2: $namesOnlyInUniqueNames2');
+}
+
+void mapTask() {
+  final wordGenerator = WordGenerator();
+  List<String> nounList = wordGenerator.randomNouns(50);
+  Map<String, int> nounsMap = {for (var noun in nounList) noun: noun.length};
+  Map<String, int> tempNouns = Map.fromEntries(
+    nounsMap.entries.where((entry) => entry.value % 2 == 0),
+  );
+  String keysFromTemp = tempNouns.keys.join(', ');
+  print(keysFromTemp);
 }
