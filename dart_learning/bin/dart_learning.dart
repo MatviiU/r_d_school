@@ -3,64 +3,29 @@ import 'dart:io';
 void main() {
   String separator = List.filled(40, '=').join();
 
-  print(separator);
-  print("Task 1");
-  print(separator);
-  mathOperations();
+  final List<Function> tasks = [
+    mathOperations,
+    comparisonOperations,
+    logicalOperations,
+    ternaryOperator,
+    assignmentOperators,
+    conditionals,
+    switchStatement,
+    loopFor,
+    loopWhile,
+    breakAndContinue,
+  ];
 
-  print(separator);
-  print("Task 2");
-  print(separator);
-  comparisonOperations();
+  for (final task in tasks) {
+    print(separator);
+    task();
+  }
 
-  print(separator);
-  print("Task 3");
-  print(separator);
-  logicalOperations();
-
-  print(separator);
-  print("Task 4");
-  print(separator);
-  ternaryOperator();
-
-  print(separator);
-  print("Task 5");
-  print(separator);
-  assignmentOperators();
-  print(separator);
-
-  print(separator);
-  print("Task 6");
-  print(separator);
-  conditionals();
-  print(separator);
-
-  print(separator);
-  print("Task 7");
-  print(separator);
-  switchStatement();
-  print(separator);
-
-  print(separator);
-  print("Task 8");
-  print(separator);
-  loopFor();
-  print(separator);
-
-  print(separator);
-  print("Task 9");
-  print(separator);
-  loopWhile();
-  print(separator);
-
-  print(separator);
-  print("Task 10");
-  print(separator);
-  breakAndContinue();
   print(separator);
 }
 
 void mathOperations() {
+  print("Task 1: Math Operations");
   double width = 18.4;
   double height = 30.9;
   double area = width * height;
@@ -72,6 +37,7 @@ void mathOperations() {
 }
 
 void comparisonOperations() {
+  print("Task 2: Comparison Operations");
   late double number;
   stdout.write("Enter a number: ");
   String? inputNumber = stdin.readLineSync();
@@ -87,6 +53,7 @@ void comparisonOperations() {
 }
 
 void logicalOperations() {
+  print("Task 3: Logical Operations");
   bool hasMoney = true;
   bool isStoreOpen = true;
 
@@ -97,6 +64,7 @@ void logicalOperations() {
 }
 
 void ternaryOperator() {
+  print("Task 4: Ternary Operator");
   late double temperature;
   stdout.write("Enter a temperature: ");
   String? inputTemperature = stdin.readLineSync();
@@ -111,6 +79,7 @@ void ternaryOperator() {
 }
 
 void assignmentOperators() {
+  print("Task 5: Assignment Operators");
   double score = 0;
   int correctAnswers = 17;
   int mistakes = 3;
@@ -126,6 +95,7 @@ void assignmentOperators() {
 }
 
 void conditionals() {
+  print("Task 6: Conditionals (if-else)");
   late double examScore;
   stdout.write("Enter your exam score: ");
   String? inputScore = stdin.readLineSync();
@@ -145,6 +115,7 @@ void conditionals() {
 }
 
 void switchStatement() {
+  print("Task 7: Switch Statement");
   late int dayNumber;
   stdout.write("Enter a day number: ");
   String? inputDayNumber = stdin.readLineSync();
@@ -169,6 +140,7 @@ void switchStatement() {
 }
 
 void loopFor() {
+  print("Task 8: For Loop");
   int sum = 0;
   for (int i = 1; i <= 10; i++) {
     print("Number $i");
@@ -187,6 +159,7 @@ void loopFor() {
 }
 
 void loopWhile() {
+  print("Task 9: While Loop");
   int i = 10;
   while (i >= 0) {
     if (i % 2 == 0) {
@@ -199,6 +172,7 @@ void loopWhile() {
 }
 
 void breakAndContinue() {
+  print("Task 10: Break and Continue");
   for (int i = 1; i <= 20; i++) {
     if (i % 3 == 0) {
       continue;
