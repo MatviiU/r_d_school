@@ -2,10 +2,10 @@ import 'dart:math';
 
 class Square{
   Square(this.side);
-  double side;
-
   factory Square.fromArea(double area){
-    double side = sqrt(area);
+    final side = sqrt(area);
     return Square(side);
   }
+
+  double side;
 }
